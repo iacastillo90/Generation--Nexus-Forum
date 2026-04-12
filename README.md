@@ -28,4 +28,4 @@ Si deseas correr este proyecto en tu máquina local, sigue estos pasos:
 
 1. Clona este repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/nexus-forum.git](https://github.com/tu-usuario/nexus-forum.git)
+   git clone https://github.com/iacastillo90/Generation--Nexus-Forum
