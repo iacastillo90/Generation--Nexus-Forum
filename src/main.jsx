@@ -1,4 +1,5 @@
-import './assets/css/index.css'
+import '@/assets/css/index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App.jsx'
 import { StrictMode } from 'react'
