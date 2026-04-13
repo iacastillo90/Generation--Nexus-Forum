@@ -1,10 +1,10 @@
-import "./aboutUs.css";
+import "./AboutUs.css";
 
-function aboutUs () {
+function AboutUs () {
 
     return(
         <h1>About Us</h1>
     );
 }
 
-export default aboutUs;
+export default AboutUs;

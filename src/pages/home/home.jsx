@@ -1,10 +1,10 @@
-import "./home.css";
+import "./Home.css";
 
-function home () {
+function Home () {
 
     return(
         <h1>Home</h1>
     );
 }
 
-export default home;
+export default Home;

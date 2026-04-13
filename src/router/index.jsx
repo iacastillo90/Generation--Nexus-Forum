@@ -1,10 +1,11 @@
-import AboutUs from "@/pages/aboutUs/aboutUs";
-import Home from "@/pages/home/home";
+import AboutUs from "@/pages/aboutUs/AboutUs";
+import Home from "@/pages/home/Home";
 import MainLayout from "@/layout/MainLayout";
-import NotFound from "@/pages/notFound/notFound";
-import Post from "@/pages/post/post";
-import PostDetail from "@/pages/postDetail/postDetail";
-import Users from "@/pages/users/users";
+import NotFound from "@/pages/notFound/NotFound";
+import Post from "@/pages/post/PostsList";
+import PostDetail from "@/pages/postDetail/PostDetail";
+import UserDetail from "@/pages/userDetail/UserDetail";
+import Users from "@/pages/users/Users";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/post",
+                path: "/posts",
                 element: <Post />
             },
             {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "/users",
                 element: <Users />
+            },
+            {
+                path: "/user/:userId",
+                element: <UserDetail />
             },
             {
                 path: "/about",

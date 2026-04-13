@@ -1,10 +1,10 @@
-import "./header.css"
+import "./Header.css"
 
-function header () {
+function Header () {
 
     return(
         <h1>Header</h1>
     );
 }
 
-export default header;
+export default Header;

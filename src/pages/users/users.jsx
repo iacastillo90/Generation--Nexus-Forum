@@ -1,10 +1,10 @@
-import "./users.css"
+import "./Users.css"
 
-function user () {
+function Users () {
 
     return(
         <h1>Users</h1>
     );
 }
 
-export default user;
+export default Users;

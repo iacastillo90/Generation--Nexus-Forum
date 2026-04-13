@@ -1,10 +1,10 @@
-import "./footer.css"
+import "./Footer.css"
 
-function footer () {
+function Footer () {
 
     return(
         <h1>Footer</h1>
     );
 }
 
-export default footer;
+export default Footer;

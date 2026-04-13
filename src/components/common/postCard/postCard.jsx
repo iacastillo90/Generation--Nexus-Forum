@@ -1,10 +1,10 @@
-import "./postCard.css";
+import "./PostCard.css";
 
-function postCard () {
+function PostCard () {
     return(
         <h1>Post Card</h1>
     );
 }
 
-export default postCard;
+export default PostCard;
 

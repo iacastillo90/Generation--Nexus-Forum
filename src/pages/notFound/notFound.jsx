@@ -1,10 +1,10 @@
-import "./notFound.css";
+import "./NotFound.css";
 
-function notFound () {
+function NotFound () {
 
     return(
         <h1>Not Found</h1>
     );
 }
 
-export default notFound;
+export default NotFound;

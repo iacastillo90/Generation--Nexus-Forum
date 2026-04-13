@@ -1,10 +1,10 @@
-import "./banner.css"
+import "./Banner.css"
 
-function banner () {
+function Banner () {
 
     return(
         <h1>Banner</h1>
     );
 }
 
-export default banner;
+export default Banner;
