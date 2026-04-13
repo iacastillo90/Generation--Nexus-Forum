@@ -17,13 +17,18 @@ function PostDetail() {
         const fetchPost = async () => {
             try {
                 const postResponse = `https://jsonplaceholder.typicode.com/posts/${id}`;
-                const postData = await axios.get(postResponse);
+                const authResponse = `https://jsonplaceholder.typicode.com/users/${postData.data.userId}`;
+                
+                const [ postData, authData] = await Promise.all([
+                    axios.get(postResponse),
+                    axios.get(authResponse)
+                ]);
+                
                 setPost(postData.data);
-
-                const authResponse = await axios.get(`https://jsonplaceholder.typicode.com/users/${postData.data.userId}`);
-                setAuthor(authResponse.data);
+                setAuthor(authData.data);   
+                
             } catch (error) {
-                setErr("Hubo un error al obtener el post", error.message);
+                setErr("Hubo un error al obtener el post" + error.message);
             } finally {
                 setLoading(false);
             }

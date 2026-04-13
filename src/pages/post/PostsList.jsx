@@ -18,9 +18,9 @@ function Post() {
             try {
                 const response = await axios.get(apiUrl);
                 setPosts(response.data);
-            } catch (err) {
-                setErr(err);
-                console.log("Error:", err);                               
+            } catch (error) {
+                setErr("Hubo un error al cargar las publicaciones: " + error.message);
+                console.log("Error:", error);                               
             } finally {
                 setLoading(false);
             }
