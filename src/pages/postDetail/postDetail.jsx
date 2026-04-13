@@ -35,6 +35,7 @@ function PostDetail() {
         };
 
         fetchPost();
+        
     }, [id]);
 
     return (

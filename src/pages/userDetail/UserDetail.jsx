@@ -17,6 +17,7 @@ function UserDetail() {
 
         const fetchUser = async () => {
             try{
+                
                 const userResponse = `https://jsonplaceholder.typicode.com/users/${userId}`;
                 const postsResponse = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
                 

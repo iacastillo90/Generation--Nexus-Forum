@@ -10,6 +10,7 @@ function Users() {
     const [err, setErr] = useState(null);
 
     useEffect(() => {
+        
         const apiUrl = "https://jsonplaceholder.typicode.com/users";
         const fetchUsers = async () => {
             try {
