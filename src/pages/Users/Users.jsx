@@ -75,10 +75,10 @@ function Users() {
                                         <i className="fas fa-envelope me-2"></i>{user.email}
                                     </p>
                                     <p className="text-muted-hacker small mb-1">
-                                        <span className="text-neon-green me-1">//</span> {user.company.name}
+                                        <span className="text-neon-green me-1">// Compañia: </span> {user.company.name}
                                     </p>
                                     <p className="text-muted-hacker small mb-0">
-                                        <span className="text-neon-green me-1">[LOC]</span> {user.address.city}
+                                        <span className="text-neon-green me-1">[Ciudad]</span> {user.address.city}
                                     </p>
                                 </div>
                                 
