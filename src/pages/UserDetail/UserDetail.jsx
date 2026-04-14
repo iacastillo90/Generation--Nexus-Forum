@@ -1,9 +1,14 @@
 import "./UserDetail.css";
 
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import PostCard from "@/components/common/PostCard/PostCard";
+import Row from "react-bootstrap/Row";
+import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function UserDetail() {
     
@@ -30,7 +35,7 @@ function UserDetail() {
                 setUser(userData.data);
 
             } catch(error) {
-                setErr("Hubo un error al obtener el Usuario: " + error.message)
+                setErr("System Error fetching User: " + error.message)
             } finally {
                 setLoading(false);
             }
@@ -42,42 +47,58 @@ function UserDetail() {
 
     return(
 
-        <>
-            <h1>User Detail</h1>
+        <Container className="my-5">
+            <h1 className="text-neon-cyan cyber-title mb-4">Command_Line: User_Profile</h1>
         
-            { loading && <p>Cargando informacion ...</p>}
-            {err && <p>{err}</p>}
+            { loading && (
+                <div className="text-center my-5">
+                    <Spinner animation="border" variant="success" className="neon-spinner" />
+                    <p className="text-neon-green mt-3">Syncing data...</p>
+                </div>
+            )}
+            {err && <p className="text-danger">{err}</p>}
 
             {user && (
-                <div className="user-detail">
-                    <h3>{user.name}</h3>
-                    <p>Username: {user.username}</p>
-                    <p>Email: {user.email}</p>
-                    <p>Telefono: {user.phone}</p>
-                    <p>Website: {user.website}</p>
-                    <p>City: {user.address.city}</p>
-                    <p>Street: {user.address.street}</p>
-                    <p>Suite: {user.address.suite}</p>
-                    <p>ZipCode: {user.address.zipcode}</p>
-                    <p>Latitud: {user.address.geo.lat}</p>
-                    <p>Longitud: {user.address.geo.lng}</p>
-                    <p>Company Name: {user.company.name}</p>
-                    <p>Company Catch Phrase: {user.company.catchPhrase}</p>
-                    <p>Company BS: {user.company.bs}</p>
-                </div>
+                <Card className="hacker-card mb-5 border-neon-green">
+                    <Card.Body>
+                        <Card.Title className="text-neon-green fs-2">{user.name}</Card.Title>
+                        <Card.Text as="div" className="text-muted-hacker">
+                            <Row>
+                                <Col md={6}>
+                                    <p><strong>Username:</strong> {user.username}</p>
+                                    <p><strong>Email:</strong> {user.email}</p>
+                                    <p><strong>Phone:</strong> {user.phone}</p>
+                                    <p><strong>Website:</strong> {user.website}</p>
+                                </Col>
+                                <Col md={6}>
+                                    <p><strong>Company:</strong> {user.company.name}</p>
+                                    <p><strong>Catch Phrase:</strong> {user.company.catchPhrase}</p>
+                                    <p><strong>City:</strong> {user.address.city}</p>
+                                    <p><strong>ZipCode:</strong> {user.address.zipcode}</p>
+                                </Col>
+                            </Row>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             )}
 
             {posts.length > 0 && (
                 <div>
-                    <h2>Posts</h2>
-                    {posts.map((post) => (
-                        <div key={post.id}>
-                            <Link to={`/post/${post.id}`}>{post.title}</Link>
-                        </div>
-                    ))}
+                    <h2 className="text-neon-cyan mb-4">_Author_Logs</h2>
+                    <Row>
+                        {posts.map((post) => (
+                            <Col md={6} lg={4} key={post.id}>
+                                <PostCard 
+                                    id={post.id}
+                                    title={post.title}
+                                    body={post.body}
+                                />
+                            </Col>
+                        ))}
+                    </Row>
                 </div>
             )}
-        </>
+        </Container>
 
     );
 }

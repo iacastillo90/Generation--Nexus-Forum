@@ -1,0 +1,86 @@
+:root {
+  --neon-green: #0f0;
+  --neon-cyan: #0ff;
+  --bg-color: #050505;
+  --card-bg: #111;
+  --text-muted: #888;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: #ddd !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* Typography styles */
+.text-neon-cyan { color: var(--neon-cyan) !important; text-shadow: 0 0 5px var(--neon-cyan); }
+.text-neon-green { color: var(--neon-green) !important; text-shadow: 0 0 5px var(--neon-green); }
+.text-muted-hacker { color: var(--text-muted) !important; }
+.cyber-title { font-weight: bold; border-bottom: 2px solid var(--neon-green); display: inline-block; padding-bottom: 0.5rem; text-transform: uppercase; }
+
+/* Custom Overrides for Hacker Theme */
+.hacker-card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid #333 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hacker-card:hover {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.btn-outline-neon {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-neon:hover {
+  background-color: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.cyber-btn {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-input {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: var(--neon-green) !important;
+}
+
+.cyber-input:focus {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 5px var(--neon-cyan) !important;
+}
+
+.cyber-input::placeholder {
+  color: #555 !important;
+}
+
+.neon-link {
+  color: var(--neon-green) !important;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.neon-link:hover {
+  text-shadow: 0 0 8px var(--neon-green);
+  transform: scale(1.05);
+}
+
+.cyber-link { transition: text-shadow 0.2s; }
+.cyber-link:hover { text-shadow: 0 0 8px var(--neon-cyan); }
+
+.neon-divider { border-color: var(--neon-cyan) !important; opacity: 0.5; }
+.border-neon-green { border-color: var(--neon-green) !important; }
+.border-neon-cyan { border-color: var(--neon-cyan) !important; }
