@@ -1,6 +1,5 @@
 import "./UserDetail.css";
 
-import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import PostCard from "@/components/common/PostCard/PostCard";
@@ -9,6 +8,7 @@ import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import UserDetailCard from "@/components/common/UserDetailCard/UserDetailCard";
 
 function UserDetail() {
     
@@ -46,7 +46,6 @@ function UserDetail() {
     }, [userId]);
 
     return(
-
         <Container className="my-5">
             <h1 className="text-neon-cyan cyber-title mb-4">Command_Line: User_Profile</h1>
         
@@ -58,29 +57,7 @@ function UserDetail() {
             )}
             {err && <p className="text-danger">{err}</p>}
 
-            {user && (
-                <Card className="hacker-card mb-5 border-neon-green">
-                    <Card.Body>
-                        <Card.Title className="text-neon-green fs-2">{user.name}</Card.Title>
-                        <Card.Text as="div" className="text-muted-hacker">
-                            <Row>
-                                <Col md={6}>
-                                    <p><strong>Username:</strong> {user.username}</p>
-                                    <p><strong>Email:</strong> {user.email}</p>
-                                    <p><strong>Phone:</strong> {user.phone}</p>
-                                    <p><strong>Website:</strong> {user.website}</p>
-                                </Col>
-                                <Col md={6}>
-                                    <p><strong>Company:</strong> {user.company.name}</p>
-                                    <p><strong>Catch Phrase:</strong> {user.company.catchPhrase}</p>
-                                    <p><strong>City:</strong> {user.address.city}</p>
-                                    <p><strong>ZipCode:</strong> {user.address.zipcode}</p>
-                                </Col>
-                            </Row>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            )}
+            <UserDetailCard user={user} />
 
             {posts.length > 0 && (
                 <div>
@@ -99,7 +76,6 @@ function UserDetail() {
                 </div>
             )}
         </Container>
-
     );
 }
 

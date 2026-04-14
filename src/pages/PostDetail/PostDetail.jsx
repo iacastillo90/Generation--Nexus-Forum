@@ -3,10 +3,10 @@ import "./PostDetail.css";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
+import PostDetailCard from "@/components/common/PostDetailCard/PostDetailCard";
 
 function PostDetail() {
     const { id } = useParams();
@@ -54,20 +54,7 @@ function PostDetail() {
             {err && <p className="text-danger">{err}</p>}
             
             {!loading && !err && post && (
-                <Card className="hacker-card">
-                    <Card.Body>
-                        <Card.Title className="text-neon-cyan fs-2">{post.title}</Card.Title>
-                        <hr className="neon-divider" />
-                        <Card.Text className="text-muted-hacker fs-5 py-3">
-                            {post.body}
-                        </Card.Text>
-                        <Card.Footer className="bg-transparent border-top border-neon-green">
-                            <small className="text-neon-green">
-                                Auth_ID: {author ? author.username : "DESCONOCIDO"} | File_ID: {post.id} | Acceso: CONCEDIDO
-                            </small>
-                        </Card.Footer>
-                    </Card.Body>
-                </Card>
+                <PostDetailCard post={post} author={author} />
             )}
         </Container>
     );

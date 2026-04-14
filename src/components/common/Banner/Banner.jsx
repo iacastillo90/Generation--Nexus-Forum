@@ -40,7 +40,7 @@ function Banner() {
             }
             animationFrameId = requestAnimationFrame(draw);
         };
-        
+
         draw();
 
         return () => {

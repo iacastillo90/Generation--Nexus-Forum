@@ -1,0 +1,4 @@
+.neon-divider {
+    border-top: 1px solid var(--neon-cyan);
+    opacity: 0.5;
+}
