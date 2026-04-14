@@ -12,9 +12,9 @@ function PostCard({ id, title, body, authorName }) {
                 <Card.Text className="text-muted-hacker">
                     {body.length > 100 ? `${body.substring(0, 100)}...` : body}
                 </Card.Text>
-                {authorName && <Card.Subtitle className="mb-3 text-neon-green">By: {authorName}</Card.Subtitle>}
+                {authorName && <Card.Subtitle className="mb-3 text-neon-green">Por: {authorName}</Card.Subtitle>}
                 <Link to={`/post/${id}`}>
-                    <Button variant="outline-neon" className="w-100">Read Data</Button>
+                    <Button variant="outline-neon" className="w-100 cyber-btn">LEER DATOS</Button>
                 </Link>
             </Card.Body>
         </Card>

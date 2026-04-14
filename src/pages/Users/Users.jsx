@@ -39,12 +39,12 @@ function Users() {
 
     return (
         <Container className="my-5">
-            <h1 className="mb-4 text-neon-cyan cyber-title">// NETWORK_NODES</h1>
+            <h1 className="mb-4 text-neon-cyan cyber-title">// NODOS_DE_RED</h1>
             
             {loading && (
                 <div className="text-center my-5">
                     <Spinner animation="border" variant="success" className="neon-spinner" />
-                    <p className="text-neon-green mt-3">Scanning network for active nodes...</p>
+                    <p className="text-neon-green mt-3">Escaneando red en busca de nodos activos...</p>
                 </div>
             )}
             
@@ -84,7 +84,7 @@ function Users() {
                                 
                                 <Link to={`/user/${user.id}`} className="mt-auto w-100">
                                     <button className="btn btn-outline-neon cyber-btn w-100">
-                                        [ACCESS PROFILE]
+                                        [ACCEDER AL PERFIL]
                                     </button>
                                 </Link>
                                 

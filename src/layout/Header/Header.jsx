@@ -22,26 +22,26 @@ function Header() {
                         navbarScroll
                     >
                         <Nav.Link as={NavLink} to="/" className="neon-link">
-                            [Home]
+                            [Inicio]
                         </Nav.Link>
                         <Nav.Link as={NavLink} to="/posts" className="neon-link">
-                            [Posts]
+                            [Publicaciones]
                         </Nav.Link>
                         <Nav.Link as={NavLink} to="/users" className="neon-link">
-                            [Comrades]
+                            [Camaradas]
                         </Nav.Link>
                         <Nav.Link as={NavLink} to="/about" className="neon-link">
-                            [About]
+                            [Nosotros]
                         </Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
                             type="search"
-                            placeholder="Input query..."
+                            placeholder="Buscar en el sistema..."
                             className="me-2 cyber-input"
                             aria-label="Search"
                         />
-                        <Button variant="outline-neon" className="cyber-btn">Search</Button>
+                        <Button variant="outline-neon" className="cyber-btn">Buscar</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>

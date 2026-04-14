@@ -38,7 +38,7 @@ function PostDetail() {
         <Container className="my-5">
             <div className="mb-4">
                 <Link to="/posts" className="text-neon-cyan text-decoration-none cyber-link">
-                    &lt; Return to Index
+                    &lt; Volver a Publicaciones
                 </Link>
             </div>
             
@@ -47,7 +47,7 @@ function PostDetail() {
             {loading && (
                 <div className="text-center my-5">
                     <Spinner animation="border" variant="success" className="neon-spinner" />
-                    <p className="text-neon-green mt-3">Decrypting file...</p>
+                    <p className="text-neon-green mt-3">Desencriptando archivo...</p>
                 </div>
             )}
             
@@ -63,7 +63,7 @@ function PostDetail() {
                         </Card.Text>
                         <Card.Footer className="bg-transparent border-top border-neon-green">
                             <small className="text-neon-green">
-                                Auth_ID: {author ? author.username : "UNKNOWN"} | File_ID: {post.id} | Access: GRANTED
+                                Auth_ID: {author ? author.username : "DESCONOCIDO"} | File_ID: {post.id} | Acceso: CONCEDIDO
                             </small>
                         </Card.Footer>
                     </Card.Body>
